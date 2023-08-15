@@ -19,7 +19,8 @@ guessButton.addEventListener("click", () => {
   attempts++;
 
   if (userGuess === targetNumber) {
-    feedback.textContent = `Congratulations! You guessed the correct number, which was ${targetNumber}, and it took you ${attempts} guesses.`;
+    const attemptText = attempts === 1 ? "attempt" : "attempts";
+    feedback.textContent = `Congratulations! You guessed the correct number, which was ${targetNumber}, and it took you ${attempts} ${attemptText}.`;
     guessButton.disabled = true;
   } else if (userGuess < targetNumber) {
     feedback.textContent = "Higher";
